@@ -1,2 +1,2 @@
-#### To start serve:
+#### To start server:
 nodemon
