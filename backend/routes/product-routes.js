@@ -1,15 +1,15 @@
 const express = require('express'),
     router = express.Router(),
-    {Category, validate} = require('../models/category');
+    {Product, validate} = require('../models/product');
 
 router.get('/', async (req, res) => {
-    const category = await Category.find();
-    res.send(category);
+    const products = await Product.find();
+    res.send(products);
 })
 
 router.get('/:id', async (req, res) => {
-    const category = await Category.findById(req.params.id);
-    category ? res.send(category) : res.status(404).send(`The category with id ${req.params.id} does not exist`);
+    const product = await Product.findById(req.params.id);
+    product ? res.send(product) : res.status(404).send(`The product with id ${req.params.id} does not exist`);
 })
 
 router.post('/', async (req, res) => {
@@ -17,15 +17,18 @@ router.post('/', async (req, res) => {
     // const {error} = validate(req.body);
     // if(error) return res.status(404).send(error.details[0].message);
 
-    //check if category exists
+    //check if product exists
 
-    // create category
-    let newCategory = new Category({
-        name: req.body.name
+    // create product
+    let newProduct = new Product({
+        name: req.body.name,
+        categoryId: req.body.categoryId,
+        imageUrl: req.body.imageUrl,
+        price: req.body.price
     });
 
     // save and return
-    const saved = await newCategory.save((err, data) =>{
+    const saved = await newProduct.save((err, data) =>{
         if(err) console.log(err);
         if(data) res.send(data);
     });
