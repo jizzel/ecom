@@ -25,3 +25,4 @@ export class CarouselComponent implements OnInit,AfterViewInit {
     M.Carousel.init(elems,this.options);
   }
 }
+
