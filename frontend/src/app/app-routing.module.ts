@@ -4,11 +4,8 @@ import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: '', pathMatch:'full', redirectTo: 'home'},
-  {path: 'home', component: HomeComponent },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  
-  {path:'**', component: PageNotFoundComponent}
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
 ];
 
 @NgModule({
