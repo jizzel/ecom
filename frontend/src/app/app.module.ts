@@ -10,6 +10,7 @@ import { FooterComponent } from './core/footer/footer.component';
 import { LoginComponent } from './core/login/login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {SharedModule} from "./shared/shared.module";
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {SharedModule} from "./shared/shared.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

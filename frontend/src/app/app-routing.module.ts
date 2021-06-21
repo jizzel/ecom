@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
 ];
 

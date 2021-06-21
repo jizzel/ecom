@@ -5,8 +5,6 @@ import {CarouselComponent} from "./components/carousel/carousel.component";
 import {FlatButtonComponent} from "./components/flat-button/flat-button.component";
 import {RaisedButtonComponent} from "./components/raised-button/raised-button.component";
 
-
-
 @NgModule({
   declarations: [
     CardComponent,
