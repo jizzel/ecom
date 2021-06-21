@@ -1,0 +1,19 @@
+.container {
+    border: 1px solid red;
+  }
+  
+  .row .col {
+    border: 1px solid silver;
+  }
+  
+  .flex-row {
+    @media (min-width:600px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      > .col.m3 {
+        margin-left:0;
+      }
+    }
+  }

@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col m4">
+    <div class="card" id="outerCardDiv">
+      <div class="card-image">
+        <img src={{prdtInfo[0].prdtImage}}>
+        <span class="card-title">{{prdtInfo[0].prdtName}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{prdtInfo[0].prdtDescription}}</p>
+      </div>
+      <div id="actionDiv" class="card-action">
+        <a  *ngIf="addCartNotPressed; else addCartPressed" 
+         id="btnStyle" 
+         class="waves-effect waves-light btn"
+         (click)=onPressCartButton()
+          >Button</a> 
+      </div>
+      <!-- *ngIf="addCartNotPressed; else addCartPressed" -->
+      <ng-template #addCartPressed>
+          <a class="waves-effect waves-light btn" style="float:left"><i class="material-icons">add</i></a>
+          <a class="waves-effect waves-light btn"style="float:right"><i class="material-icons">remove</i></a>
+      
+      </ng-template>
+
+    </div>
+  </div>
+  <div class="col m4">
+    <div class="card" id="outerCardDiv">
+      <div class="card-image">
+        <img src={{prdtInfo[0].prdtImage}}>
+        <span class="card-title">{{prdtInfo[0].prdtName}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{prdtInfo[0].prdtDescription}}</p>
+      </div>
+      <div  id="actionDiv" class="card-action">
+      <a id="btnStyle" class="waves-effect waves-light btn">Button</a> 
+      </div>
+    </div>
+  </div>
+  <div class="col m4">
+    <div class="card" id="outerCardDiv">
+      <div class="card-image">
+        <img src={{prdtInfo[0].prdtImage}}>
+        <span class="card-title">{{prdtInfo[0].prdtName}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{prdtInfo[0].prdtDescription}}</p>
+      </div>
+      <div  id="actionDiv" class="card-action">
+      <a id="btnStyle" class="waves-effect waves-light btn">Button</a> 
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+    
+      

@@ -6,14 +6,14 @@ import * as M from 'materialize-css';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
+
 export class CarouselComponent implements OnInit,AfterViewInit {
   options= {fullWidth:true,indicators: true, duration: 200}
-  items=["../../assets/images/img1.jpg", 
-        "../../assets/images/img1.jpg", 
-        "../../assets/images/img1.jpg",
-        "../../assets/images/img1.jpg"]
+  items=["../../assets/images/ring.jpeg", 
+        "../../assets/images/ring.jpeg", 
+        "../../assets/images/ring.jpeg",
+        "../../assets/images/ring.jpeg"]
 
-  hrefs=['one', 'two', 'three', 'four','five'];
         
   constructor() { }
 

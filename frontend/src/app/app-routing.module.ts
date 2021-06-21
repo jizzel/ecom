@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './core/home/home.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
-const routes: Routes = [{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }];
+const routes: Routes = [
+  {path: '', pathMatch:'full', redirectTo: 'home'},
+  {path: 'home', component: HomeComponent },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  
+  {path:'**', component: PageNotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
