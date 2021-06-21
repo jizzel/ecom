@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {globals} from "../../../globals";
+import * as M from "materialize-css";
 
 @Component({
   selector: 'app-product',
@@ -21,6 +22,8 @@ export class ProductComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    let elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems);
   }
 
   onSubmit() {

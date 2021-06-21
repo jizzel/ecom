@@ -14,6 +14,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule
   ]
 })
 export class AdminModule { }
