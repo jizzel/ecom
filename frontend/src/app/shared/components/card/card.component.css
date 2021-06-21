@@ -1,0 +1,32 @@
+ /* #outerCardDiv {
+    border-radius:30px; 
+    overflow:hidden;
+}  */
+ 
+#actionDiv{
+  padding:0;  /*this helps the button to fill the div space */
+}
+
+
+#btnStyle {
+    background-color: #868E96;
+    color:white;
+    height:40px;
+    border:1px solid #868E96; 
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+    display:block;
+    text-align:center;
+    cursor:pointer;
+}
+
+#btnStyle:hover{
+   background-color:#727B84;
+}
+
+
+
+
