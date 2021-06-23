@@ -11,6 +11,10 @@ import { LoginComponent } from './core/login/login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {SharedModule} from "./shared/shared.module";
 import {AdminModule} from "./admin/admin.module";
+import { CheckoutComponent } from './shopping/checkout/checkout.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShippingComponent } from './shopping/shipping/shipping.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import {AdminModule} from "./admin/admin.module";
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CheckoutComponent,
+    ShoppingListComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,

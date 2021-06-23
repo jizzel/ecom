@@ -1,0 +1,11 @@
+
+#btnStyle {
+    background-color: #868E96;
+    color:white;
+    border:1px solid #868E96; 
+    cursor:pointer;
+}
+
+#btnStyle:hover{
+   background-color:#727B84;
+}

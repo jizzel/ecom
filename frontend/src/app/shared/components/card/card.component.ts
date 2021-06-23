@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   prdtInfo=[
     {prdtImage:"../../assets/images/sample-1.jpeg",
      prdtName:"Waist beads",
+     prdtPrice:"30",
      prdtDescription:"I am a very simple card. I am good at containing small bits of information.I am convenient because I require little markup to use effectively."  
     },
 

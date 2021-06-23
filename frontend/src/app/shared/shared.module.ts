@@ -4,13 +4,15 @@ import {CardComponent} from "./components/card/card.component";
 import {CarouselComponent} from "./components/carousel/carousel.component";
 import {FlatButtonComponent} from "./components/flat-button/flat-button.component";
 import {RaisedButtonComponent} from "./components/raised-button/raised-button.component";
+import {ProductQuantityComponent} from "./components/product-quantity/product-quantity.component";
 
 @NgModule({
   declarations: [
     CardComponent,
     CarouselComponent,
     FlatButtonComponent,
-    RaisedButtonComponent
+    RaisedButtonComponent,
+    ProductQuantityComponent
   ],
   imports: [
     CommonModule
@@ -19,7 +21,8 @@ import {RaisedButtonComponent} from "./components/raised-button/raised-button.co
     CardComponent,
     CarouselComponent,
     FlatButtonComponent,
-    RaisedButtonComponent
+    RaisedButtonComponent,
+    ProductQuantityComponent
   ]
 })
 export class SharedModule { }
