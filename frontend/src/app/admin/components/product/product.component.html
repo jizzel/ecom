@@ -11,8 +11,13 @@
                 <input id="product_name" type="text" class="validate" formControlName="name">
               </div>
               <div class="input-field col s6">
+                <select id="category_id" formControlName="categoryId">
+                  <option value="" disabled selected>Choose your option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
                 <label for="category_id">Product Category</label>
-                <input id="category_id" type="text" class="validate" formControlName="categoryId">
               </div>
             </div>
             <div class="row">
