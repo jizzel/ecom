@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
     price: new FormControl(''),
     categoryId: new FormControl(''),
     image: new FormControl(''),
-    name: new FormControl('')
+    name: new FormControl(''),
   });
   // @ts-ignore
   file: File = null;

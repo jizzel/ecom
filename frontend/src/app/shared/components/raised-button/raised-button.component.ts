@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-raised-button',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./raised-button.component.css']
 })
 export class RaisedButtonComponent implements OnInit {
+
+  @Input() buttonName: string = '';
 
   constructor() { }
 

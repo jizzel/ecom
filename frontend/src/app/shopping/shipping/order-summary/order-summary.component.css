@@ -1,34 +1,18 @@
-nav{
-    background-color: black;
-    color:whitesmoke
+#myOrderSummaryTitle{
+    font-size: 34px;
+    font-weight: bold;
+    padding-top:30px;
+    padding-bottom:20px;
 }
 
-.nav-wrapper form{
-    margin: auto;
-    width: 100%;
-}
-
-.nav-wrapper form #mySearch{
-    height: 50px;
-    border-radius: 20px;
-}
-
-.nav-wrapper .input-field{
-    padding-top: 7px; 
-}
-
-.nav-wrapper .brand-logo{
-    margin-left:10px;
-}
-
-.nav-wrapper .hide-on-med-and-down #catalog-menu{
-    margin-left:100px;
+.myHeaderColor{
+    background-color: #2CBBAD;
 }
 
 .notification-icon--fixed {
     position: relative;
     color: #fff;
-    background-color: #ffc107;
+    background-color:#ffc107;
     border-radius: 50%;
     font-family: "Roboto";
     

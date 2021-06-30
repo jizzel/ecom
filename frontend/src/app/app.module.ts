@@ -11,9 +11,9 @@ import { LoginComponent } from './core/login/login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {SharedModule} from "./shared/shared.module";
 import {AdminModule} from "./admin/admin.module";
-import { CheckoutComponent } from './shopping/checkout/checkout.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShippingComponent } from './shopping/shipping/shipping.component';
+import {ShoppingModule} from "./shopping/shopping.module";
+
+
 
 
 @NgModule({
@@ -23,17 +23,17 @@ import { ShippingComponent } from './shopping/shipping/shipping.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    PageNotFoundComponent,
-    CheckoutComponent,
-    ShoppingListComponent,
-    ShippingComponent
+    PageNotFoundComponent
+   
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AdminModule
+    AdminModule,
+    ShoppingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
