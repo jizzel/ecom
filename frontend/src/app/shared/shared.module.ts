@@ -6,6 +6,7 @@ import {FlatButtonComponent} from "./components/flat-button/flat-button.componen
 import {RaisedButtonComponent} from "./components/raised-button/raised-button.component";
 import {ProductQuantityComponent} from "./components/product-quantity/product-quantity.component";
 
+
 @NgModule({
   declarations: [
     CardComponent,
