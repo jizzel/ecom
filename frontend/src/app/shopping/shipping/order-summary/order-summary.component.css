@@ -1,0 +1,34 @@
+#myOrderSummaryTitle{
+    font-size: 34px;
+    font-weight: bold;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+
+.myHeaderColor{
+    background-color: #2CBBAD;
+}
+
+.notification-icon--fixed {
+    position: relative;
+    color: #fff;
+    background-color:#ffc107;
+    border-radius: 50%;
+    font-family: "Roboto";
+    
+    /* Alignment */
+    line-height: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Adjust as required: */
+    padding: 10px;
+  }
+  
+  /* Height = width */
+  .notification-icon--fixed::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
