@@ -11,6 +11,10 @@ import { LoginComponent } from './core/login/login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import {SharedModule} from "./shared/shared.module";
 import {AdminModule} from "./admin/admin.module";
+import {ShoppingModule} from "./shopping/shopping.module";
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,13 +24,16 @@ import {AdminModule} from "./admin/admin.module";
     FooterComponent,
     LoginComponent,
     PageNotFoundComponent
+   
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AdminModule
+    AdminModule,
+    ShoppingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

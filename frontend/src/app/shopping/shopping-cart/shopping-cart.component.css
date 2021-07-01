@@ -1,0 +1,29 @@
+#myShoppingCartTitle{
+    font-weight:bold;
+    font-size:35px;
+    padding-top:20px;
+}
+
+input{
+	height:34px;
+    width:50px !important;
+    text-align: center;
+    font-size: 26px;
+    border:1px solid #ddd;
+	border-radius:4px;
+    display: inline-block;
+    vertical-align: middle;
+    border:1px solid !important;
+    padding-left:10px !important;
+    padding-right:10px !important;
+}
+			
+
+#myQuantity{
+    margin:0;
+}
+
+#myThumbNail{
+    width:80px;
+    height:80px;
+}

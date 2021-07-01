@@ -1,0 +1,32 @@
+<h1 id="myShoppingCartTitle">Shopping Cart</h1>
+<P>You have {{numberOfItemsInCart}} items in your cart</P>
+<a class="waves-effect waves-light btn-large"
+(click)="deleteShoppingCart()">Clear Shopping Cart</a>
+
+<table [ngStyle]="{marginBottom:'40px'}">
+    <thead>
+      <tr>
+          <th *ngFor="let item of tableHeaderNames;">{{item}}</th>  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cartItem of shoppingCartItems">
+        <td><img src={{cartItem.prdtImage}} alt="" class="circle responsive-img" id="myThumbNail"></td>
+        <td class="cart-content__quantity"> 
+          <div class="number" id="myQuantity">
+            <a class="btn-floating btn-small waves-effect waves-light red" [ngStyle]="{marginRight:'4px'}"><i   class="material-icons">remove</i></a>
+            <input type="text" value="1" min="1" max="20"/>
+            <a class="btn-floating btn-small waves-effect waves-light red" [ngStyle]="{marginLeft:'4px'}"><i class="material-icons">add</i></a>   
+         </div>
+        </td>       
+        <td>{{cartItem.prtPrice| currency:'USD'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div [ngStyle]="{marginBottom:'40px'}">
+    <app-raised-button
+    [buttonName]="buttonName"
+    (click)="onClickCheckOut()">
+    </app-raised-button>
+  </div>
+

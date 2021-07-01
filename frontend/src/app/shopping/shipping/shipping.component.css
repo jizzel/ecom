@@ -1,0 +1,21 @@
+#myShippingTitle{
+    font-size: 34px;
+    font-weight: bold;
+    padding-top:30px;
+}
+
+
+#myShippingForm{
+    padding-bottom:10px;
+}
+
+
+.helper-text{
+     color:#E32C2C;
+     font-size: 15px;
+}
+
+
+.myHeaderColor{
+    background-color: #2CBBAD;
+}
