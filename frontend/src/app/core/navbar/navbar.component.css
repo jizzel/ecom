@@ -28,7 +28,9 @@ nav{
 .notification-icon--fixed {
     position: relative;
     color: #fff;
-    background-color: #ffc107;
+    background-color: white;
+    color:black;
+    font-weight: bold;
     border-radius: 50%;
     font-family: "Roboto";
     

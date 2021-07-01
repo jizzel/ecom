@@ -1,75 +1,32 @@
 <h1 id="myShoppingCartTitle">Shopping Cart</h1>
 <P>You have {{numberOfItemsInCart}} items in your cart</P>
-<a class="waves-effect waves-light btn-large">Clear Shopping Cart</a>
+<a class="waves-effect waves-light btn-large"
+(click)="deleteShoppingCart()">Clear Shopping Cart</a>
 
-<table style="margin-bottom:40px">
+<table [ngStyle]="{marginBottom:'40px'}">
     <thead>
       <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
+          <th *ngFor="let item of tableHeaderNames;">{{item}}</th>  
       </tr>
     </thead>
-
     <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td class="cart-content__quantity">
-           
+      <tr *ngFor="let cartItem of shoppingCartItems">
+        <td><img src={{cartItem.prdtImage}} alt="" class="circle responsive-img" id="myThumbNail"></td>
+        <td class="cart-content__quantity"> 
           <div class="number" id="myQuantity">
-            <!-- <span class="minus"><i class="material-icons">remove</i></span> -->
-            <a class="waves-effect waves-teal btn-flat myplusminus"><i class="material-icons">remove</i></a>
-            <input type="text" value="1"/>
-            <!-- <span class="plus"><i class="material-icons">add</i></span> -->
-            <a class="waves-effect waves-teal btn-flat myplusminus"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light red" [ngStyle]="{marginRight:'4px'}"><i   class="material-icons">remove</i></a>
+            <input type="text" value="1" min="1" max="20"/>
+            <a class="btn-floating btn-small waves-effect waves-light red" [ngStyle]="{marginLeft:'4px'}"><i class="material-icons">add</i></a>   
          </div>
-        </td>
-          
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
+        </td>       
+        <td>{{cartItem.prtPrice| currency:'USD'}}</td>
       </tr>
     </tbody>
   </table>
-<app-raised-button
-[buttonName]="buttonName"
-(click)="onClickCheckOut()">
-</app-raised-button>
+  <div [ngStyle]="{marginBottom:'40px'}">
+    <app-raised-button
+    [buttonName]="buttonName"
+    (click)="onClickCheckOut()">
+    </app-raised-button>
+  </div>
 
-
-<!-- <label class="cart-content__quantity__label">
-    <button class="cart-content__quantity__button cart-content__quantity__button--minus" disabled="">
-      <svg width="12" height="2" fill="none"><path d="M11.143 1.857H.857a.857.857 0 110-1.714h10.286a.857.857 0 110 1.714z" fill="#d0c6bb"></path></svg>
-    </button>
-    <button class="cart-content__quantity__button cart-content__quantity__button--plus">
-      <svg width="12" height="12" fill="none"><path d="M11.143 5.143H7.07a.214.214 0 01-.214-.214V.857a.857.857 0 10-1.714 0V4.93a.214.214 0 01-.214.214H.857a.857.857 0 100 1.714H4.93a.214.214 0 01.214.214v4.072a.857.857 0 101.714 0V7.07a.214.214 0 01.214-.214h4.072a.857.857 0 100-1.714z" fill="#000"></path></svg>
-    </button>
-  </label>-->
-
-  <br>
-  <br>
-
-  <!-- <label for="quantity" class="cart_item_quantity" style="display:flex">
-  <button class="cart-content__quantity__button cart-content__quantity__button--minus">
-    <svg width="12" height="2" fill="none"><path d="M11.143 1.857H.857a.857.857 0 110-1.714h10.286a.857.857 0 110 1.714z" fill="#d0c6bb"></path></svg>
-  </button>
-  <button class="cart-content__quantity__button cart-content__quantity__button--plus">
-    <svg width="12" height="12" fill="none"><path d="M11.143 5.143H7.07a.214.214 0 01-.214-.214V.857a.857.857 0 10-1.714 0V4.93a.214.214 0 01-.214.214H.857a.857.857 0 100 1.714H4.93a.214.214 0 01.214.214v4.072a.857.857 0 101.714 0V7.07a.214.214 0 01.214-.214h4.072a.857.857 0 100-1.714z" fill="#000"></path></svg>
-  </button>
-  </label>
-  <input type="number" id="quantity" name="quantity" min="1" max="5" value="1" class=".cart-content__quantity__input">
-  
-  <br>
-  <br> -->
-
-  
- 
-  
