@@ -12,7 +12,8 @@
 .notification-icon--fixed {
     position: relative;
     color: #fff;
-    background-color:#ffc107;
+    background-color:black;
+    color:white;
     border-radius: 50%;
     font-family: "Roboto";
     
@@ -31,4 +32,10 @@
     content: "";
     display: block;
     padding-bottom: 100%;
+  }
+
+  #myTotal{
+    float:right;
+     font-size:24px;
+      font-family:'proxima-nova';
   }

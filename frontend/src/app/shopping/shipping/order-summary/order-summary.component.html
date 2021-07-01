@@ -69,12 +69,12 @@
     <div>
       <div class="card white">
         <div class="card-content black-text">
-          <span class="card-title"style="font-weight:500">Order Summary</span>
+          <span class="card-title"[ngStyle]="{fontWeight:'500'}">Order Summary</span>
           <p class="card-text">You only have one item in your cart</p>
-          <ul class="collection" style="border-style:none">
+          <ul class="collection" [ngStyle]="{borderStyle:'none'}">
             <hr>
             <li class="collection-item avatar">
-                <img src="images/yuna.jpg" alt="" class="circle">
+                <img id="myThumbNail"src="../../assets/images/sample-1.jpeg" alt="" class="circle">
                 <a class="notification-icon--fixed">
                     <small class="notification-badge">1</small>
                   </a>
@@ -82,12 +82,12 @@
                 <p style="color:black;float:right">{{'30' | currency:'USD':true}}</p>
               </li>
               <li class="collection-item" style="font-weight: 700;">Total
-                <div style="float:right; font-size:24px; font-family:'proxima-nova'">{{'30' | currency:'USD':true}}</div></li>
+                <div  id="myTotal">{{'30' | currency:'USD':true}}</div></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
             
-
+  <!-- style="float:right; font-size:24px; font-family:'proxima-nova'" -->
  
