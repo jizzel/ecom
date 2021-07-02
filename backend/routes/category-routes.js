@@ -21,14 +21,11 @@ router.post('/', async (req, res) => {
 
     // create category
     let newCategory = new Category({
-        name: req.body.name
+        name: req.body.categoryName
     });
 
     // save and return
-    const saved = await newCategory.save((err, data) =>{
-        if(err) console.log(err);
-        if(data) res.send(data);
-    });
+    const saved = await newCategory.save();
     res.send(saved);
 })
 
