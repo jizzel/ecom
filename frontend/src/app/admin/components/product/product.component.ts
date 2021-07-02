@@ -41,17 +41,17 @@ export class ProductComponent implements OnInit {
       .subscribe(products => {
         // @ts-ignore
         this.products = products;
-        if(productId){
-          const prod = this.products.find(product => productId === product._id);
-          if (prod)
-            if(prod._id) {
-              const cat = this.categories.find( cat => cat._id === prod.categoryId)
-              this.product.control.get('name').set(prod.name);
-              this.product.control.get('categoryId').set(cat);
-              this.product.control.get('price').set(prod.price);
-              this.product.control.get('quantity').set(prod.quantity);
-            }
-        }
+        // if(productId){
+        //   const prod = this.products.find(product => productId === product._id);
+        //   if (prod)
+        //     if(prod._id) {
+        //       const cat = this.categories.find( cat => cat._id === prod.categoryId)
+        //       this.product.control.get('name').set(prod.name);
+        //       this.product.control.get('categoryId').set(cat);
+        //       this.product.control.get('price').set(prod.price);
+        //       this.product.control.get('quantity').set(prod.quantity);
+        //     }
+        // }
       })
   }
 
