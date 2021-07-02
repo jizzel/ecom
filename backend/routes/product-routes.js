@@ -24,14 +24,12 @@ router.post('/', async (req, res) => {
         name: req.body.name,
         categoryId: req.body.categoryId,
         imageUrl: req.body.imageUrl,
-        price: req.body.price
+        price: req.body.price,
+        quantity: req.body.quantity
     });
 
     // save and return
-    const saved = await newProduct.save((err, data) =>{
-        if(err) console.log(err);
-        if(data) res.send(data);
-    });
+    const saved = await newProduct.save();
     res.send(saved);
 })
 
