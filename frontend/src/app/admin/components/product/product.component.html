@@ -10,36 +10,39 @@
                 <label for="product_name">Product Name</label>
                 <input id="product_name" type="text" class="validate" formControlName="name">
               </div>
-              <div class="input-field col s6">
-                <select id="category_id" formControlName="categoryId">
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label for="category_id">Product Category</label>
+              <div class="input-field col s12">
+                <mat-form-field>
+                  <mat-label>Category</mat-label>
+                  <mat-select formControlName="categoryId">
+                    <mat-option disabled>Choose category</mat-option>
+                    <mat-option *ngFor="let cat of categories" [value]="cat._id">{{cat.name}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 m6">
                 <label for="price">Price</label>
                 <input id="price" type="text" class="validate" formControlName="price">
               </div>
+              <div class="input-field col s12 m6">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" formControlName="quantity">
+              </div>
             </div>
             <div class="row">
               <div class="input-field col s6">
-                <label for="file" class="image-upload-container btn">
-                  <span>Select Image</span>
-                  <input class="file-input"
-                         id="file"
-                         type="file"
-                         (change)="onFileChange($event)"
-                         accept="image/*">
-                  <mat-icon>attach_file</mat-icon>
-                </label>
+                <i class="material-icons prefix teal lighten-1">attach_file</i>
+                <input class="file-input"
+                       id="file"
+                       type="file"
+                       (change)="onFileChange($event)"
+                       accept="image/*">
+                <label for="file">Select Image</label>
               </div>
               <div class="col s3 file-upload">
-                {{product.contains('image') || "No file uploaded yet."}}
+                <span *ngIf="file">{{file.name}}</span>
+                <span *ngIf="!file">No file uploaded yet.</span>
               </div>
             </div>
             <div class="row">
@@ -57,11 +60,11 @@
       <div class="card-content white-text">
         <span class="card-title">Add Category</span>
         <div>
-          <form class="col s12 card-panel">
+          <form class="col s12 card-panel" (ngSubmit)="submitCategory()">
             <div class="row">
               <div class="input-field col s12">
                 <label for="category_name">Category Name</label>
-                <input id="category_name" type="text" class="validate">
+                <input id="category_name" [formControl]="categoryName" type="text" class="validate">
               </div>
             </div>
             <div class="row">

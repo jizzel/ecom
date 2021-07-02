@@ -11,10 +11,11 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -24,18 +25,20 @@ import {MatInputModule} from "@angular/material/input";
     ProductsComponent,
     ProductComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    HttpClientModule,
-    MatInputModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        HttpClientModule,
+        MatInputModule,
+        FormsModule,
+        MatSelectModule
+    ]
 })
 export class AdminModule { }

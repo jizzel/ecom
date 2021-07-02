@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: AdminComponent },
   { path: 'orders', component: AdminOrdersComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'product/:productId', component: ProductComponent },
   { path: 'products', component: ProductsComponent }
 ];
 
