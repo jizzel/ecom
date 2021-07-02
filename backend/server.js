@@ -5,6 +5,8 @@ const express = require('express'),
     cors = require('cors'),
     mongoose = require('mongoose'),
     port = process.env.PORT || 3000,
+    fs = require('fs'),
+    dir = './uploads',
     productRouter = require('./routes/product-routes'),
     categoryRouter = require('./routes/category-routes');
 
@@ -38,6 +40,9 @@ app.post('/products', (req, res, next) => {
     }
 
     let file = req.files['file'];
+    if(!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+    }
     let uploadPath = __dirname + '\\uploads\\' + file.md5 + file.name;
     req.body.imageUrl = file.md5 + file.name;
 
