@@ -30,6 +30,26 @@ app.use(fileUpload({
     tempFileDir: '/temp/'
 }));
 
+app.post('/products', (req, res, next) => {
+    req.body = JSON.parse(req.body.data);
+
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.');
+    }
+
+    let file = req.files['file'];
+    let uploadPath = __dirname + '\\uploads\\' + file.md5 + file.name;
+    req.body.imageUrl = file.md5 + file.name;
+
+    file.mv(uploadPath, function(err) {
+        if (err){
+            return res.status(500).send(err);
+        }
+    });
+
+    next();
+});
+
 // routes
 app.get('/', (req, res) => {
     res.send('Hello world!');
