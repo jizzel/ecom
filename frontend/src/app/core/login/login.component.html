@@ -1,1 +1,51 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col m6" class="login-page">
+            <div class="loginForm">
+                <h1 id="login-heading">CUSTOMER LOGIN</h1>
+                <p [ngStyle]="{marginBottom:'0px'}">
+                    Not a member? 
+                    <a routerLink="/register" id="customer-register-link">
+                        Join Us</a>
+                </p>
+                <form  id="myLoginForm" class="col s12 card-panel white" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                   <div class="row">
+                      <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                          <label for="email">Email</label>
+                          <input 
+                          id="mail" 
+                          type="email" 
+                          class="validate" 
+                          formControlName="email">  
+                           <span 
+                           *ngIf="!loginForm.valid && email?.touched"
+                           class="helper-text">Enter a valid email</span>               
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                            <label for="password">Password</label>
+                            <input 
+                            id="password" 
+                            type="password"
+                             class="validate"
+                             formControlName="password"> 
+                              <span 
+                              *ngIf="!loginForm.valid && password?.touched"
+                              class="helper-text" 
+                              >Enter a valid password</span>                  
+                          </div>
+                      </div>
+                      <p id="passwordResetSection">
+                          <a routerLink="/reset-password" id="resetPassword">Forgot your password?</a>
+                      </p>
+                        <button class="btn waves-effect waves-light black" type="submit" name="action" id="loginButton">
+                            {{buttonName}}
+                        </button> 
+                  </form>
+            </div>           
+        </div>
+    </div>    
+</div>
+
+<!-- <i class="material-icons right">send</i> -->
