@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
       const elemsDropdown = document.querySelectorAll('.dropdown-trigger');
       M.Dropdown.init(elemsDropdown,{
         //this option prevents the dropdown options from covering the dropdown title
+        hover:true,
+        constrainWidth:false,
         coverTrigger:false
       });
 
