@@ -8,7 +8,7 @@ import { FormControl,NgForm, FormGroup, ControlValueAccessor, FormBuilder, NG_VA
 export class ShippingComponent implements OnInit {
   buttonName:string="Place Order";
 
-  // shippingForm: FormGroup;
+  
   shippingForm:FormGroup = new FormGroup({
     'name': new FormControl('',Validators.required,),
     'email': new FormControl('',[Validators.required, Validators.email]),
@@ -25,8 +25,7 @@ export class ShippingComponent implements OnInit {
   constructor() { }
 
   ngOnInit():void {
-   // console.log(this.name?.touched);
-   
+   // console.log(this.name?.touched); 
   }
 
   onSubmit(){
