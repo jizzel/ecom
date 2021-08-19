@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {globals} from "../../../globals";
 import {ActivatedRoute} from "@angular/router";
@@ -16,10 +16,14 @@ interface Category {
 })
 export class ProductComponent implements OnInit {
   product: any = new FormGroup({
-    price: new FormControl(''),
-    categoryId: new FormControl(''),
-    name: new FormControl(''),
-    quantity: new FormControl('')
+    price: new FormControl('', Validators.required),
+    categoryId: new FormControl('', Validators.required),
+    category: new FormGroup({
+      _id: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required)
+    }),
+    name: new FormControl('', Validators.required),
+    quantity: new FormControl('', Validators.required)
   });
   categoryName = new FormControl('');
   // @ts-ignore
@@ -56,13 +60,14 @@ export class ProductComponent implements OnInit {
   }
 
   onSubmit() {
-    const formData = new FormData();
-    formData.append('file', this.file);
-    formData.append('data', JSON.stringify(this.product.value));
-    this.http.post(globals.baseUrl + '/products', formData)
-      .subscribe(res => {
-        console.log(res);
-      });
+    console.log(this.product.value);
+    // const formData = new FormData();
+    // formData.append('file', this.file);
+    // formData.append('data', JSON.stringify(this.product.value));
+    // this.http.post(globals.baseUrl + '/products', formData)
+    //   .subscribe(res => {
+    //     console.log(res);
+    //   });
   }
 
   onFileChange($event: Event) {
@@ -75,5 +80,20 @@ export class ProductComponent implements OnInit {
   submitCategory() {
     this.http.post(globals.baseUrl + '/category', {categoryName: this.categoryName.value})
       .subscribe(res => console.log(res));
+  }
+
+  get name() { return this.product.get('name'); }
+
+  get price() { return this.product.get('price'); }
+
+  get quantity() { return this.product.get('quantity'); }
+
+  // get category() { return this.product.get('category'); }
+
+  select() {
+    // this.category.get('_id').set()
+    console.log(this.name);
+
+
   }
 }
