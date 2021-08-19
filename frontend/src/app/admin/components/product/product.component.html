@@ -9,11 +9,12 @@
               <div class="input-field col s6">
                 <label for="product_name">Product Name</label>
                 <input id="product_name" type="text" class="validate" formControlName="name">
+                <div *ngIf="name.touched && name.status === 'INVALID'"><p style="color: red">name is required!</p></div>
               </div>
               <div class="input-field col s12">
                 <mat-form-field>
                   <mat-label>Category</mat-label>
-                  <mat-select formControlName="categoryId">
+                  <mat-select formGroupName="categoryId" (selectionChange)="select()">
                     <mat-option disabled>Choose category</mat-option>
                     <mat-option *ngFor="let cat of categories" [value]="cat._id">{{cat.name}}</mat-option>
                   </mat-select>
@@ -24,10 +25,12 @@
               <div class="input-field col s12 m6">
                 <label for="price">Price</label>
                 <input id="price" type="text" class="validate" formControlName="price">
+                <div *ngIf="price.touched && price.status === 'INVALID'"><p style="color: red">Price is required!</p></div>
               </div>
               <div class="input-field col s12 m6">
                 <label for="quantity">Quantity</label>
                 <input type="number" id="quantity" formControlName="quantity">
+                <div *ngIf="quantity.touched && quantity.status === 'INVALID'"><p style="color: red">Quantity is required!</p></div>
               </div>
             </div>
             <div class="row">
