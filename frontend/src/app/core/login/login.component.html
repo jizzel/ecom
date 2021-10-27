@@ -16,10 +16,14 @@
                           id="mail" 
                           type="email" 
                           class="validate" 
-                          formControlName="email">  
-                           <span 
-                           *ngIf="!loginForm.valid && email?.touched"
-                           class="helper-text">Enter a valid email</span>               
+                          formControlName="email"
+                          [ngClass]="{ 'is-invalid': submitted && f.email.errors }">  
+                           <!-- <span 
+                           *ngIf="submitted && !f.valid && email?.touched && f.email.errors "
+                           class="helper-text">Enter a valid email</span>                -->
+                           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                        </div>
                         </div>
                     </div>
                     <div class="row">
@@ -29,19 +33,25 @@
                             id="password" 
                             type="password"
                              class="validate"
-                             formControlName="password"> 
-                              <span 
+                             formControlName="password"
+                             [ngClass]="{ 'is-invalid': submitted && f.password.errors }"> 
+                              <!-- <span 
                               *ngIf="!loginForm.valid && password?.touched"
                               class="helper-text" 
-                              >Enter a valid password</span>                  
+                              >Enter a valid password</span>                   -->
+                              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
                           </div>
                       </div>
                       <p id="passwordResetSection">
                           <a routerLink="/reset-password" id="resetPassword">Forgot your password?</a>
                       </p>
-                        <button class="btn waves-effect waves-light black" type="submit" name="action" id="loginButton">
+                        <button class="btn waves-effect waves-light black" type="submit" name="action" id="loginButton"
+                        ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                             {{buttonName}}
                         </button> 
+                        <div *ngIf="error" class="alert alert-danger helper-text">{{error}}</div>
                   </form>
             </div>           
         </div>
