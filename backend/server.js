@@ -27,10 +27,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/static', express.static('uploads'));
-app.use(fileUpload({
-    useTempFiles: true,
-    tempFileDir: '/temp/'
-}));
+app.use(fileUpload());
 
 app.post('/products', (req, res, next) => {
     req.body = JSON.parse(req.body.data);
@@ -43,7 +40,7 @@ app.post('/products', (req, res, next) => {
     if(!fs.existsSync(dir)){
         fs.mkdirSync(dir);
     }
-    let uploadPath = __dirname + '\\uploads\\' + file.md5 + file.name;
+    let uploadPath = __dirname + '/uploads/' + file.md5 + file.name;
     req.body.imageUrl = file.md5 + file.name;
 
     file.mv(uploadPath, function(err) {
@@ -51,7 +48,6 @@ app.post('/products', (req, res, next) => {
             return res.status(500).send(err);
         }
     });
-
     next();
 });
 
