@@ -1,0 +1,61 @@
+<h1 id="myOdersHeading">My Orders</h1>
+
+<table>
+    <thead>
+        <tr >
+            <th *ngFor="let item of tableHeaders">{{item}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- this part is the orderNumber and Order Date for all the rows. I made it a separate row so it should appear once for all the orders -->
+            <tr>
+                <div id="my-order-time-and-number">
+                    <span id="myorders-order-number">Order NO. GSHMGP00X0008RM</span>
+                    <span id="myorders-order-date"> Tue Aug 03 2021 20:40:56 GMT+0000 (Greenwich Mean Time)</span>
+                </div>
+            </tr> 
+            
+            
+            <tr>
+                <td>
+                    <div id="order-products">
+                        <div id="product-image">
+                            <img src="../../assets/images/sample-1.jpeg" alt="image-sample" id="myThumbNail">
+                        </div>
+                        <div id="product-info">
+                            <p><a tabindex="0"  href="https://www.shein.com/Chain-Print-Notched-Neck-Tee-p-2507309-cat-1738.html" target="_blank" id="product-info-detail">
+                                Chain Print Notched Neck Tee</a></p>
+                            <p tabindex="0" id="product-info-price">US$13.00</p>
+                            <!-- <p tabindex="0" id="product-info-size"><span>
+                                Size:    
+                            </span><span>
+                                XL
+                            </span></p> -->
+                        </div>
+                    </div>
+                </td>
+                <td tabindex="0"><div tabindex="0"><span class="struct-price__dis">US$11.70</span></div></td>
+                <td tabindex="0" aria-label="Quantity1">1 </td>
+                <td tabindex="0" aria-label="Status" data-order-status="18" ><div><span tabindex="0" class="order-status">Shipped</span></div></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div id="order-products">
+                        <div id="product-image">
+                            <img src="../../assets/images/sample-1.jpeg" alt="image-sample" id="myThumbNail">
+                        </div>
+                        <div id="product-info">
+                            <p><a tabindex="0"  href="https://www.shein.com/Chain-Print-Notched-Neck-Tee-p-2507309-cat-1738.html" target="_blank" id="product-info-detail">
+                                Chain Print Notched Neck Tee</a></p>
+                            <p tabindex="0" id="product-info-price">US$13.00</p>
+                        </div>
+                    </div>
+                </td>
+                <td tabindex="0"><div tabindex="0"><span class="struct-price__dis">US$11.70</span></div></td>
+                <td tabindex="0" aria-label="Quantity1">1 </td>
+                <td tabindex="0" aria-label="Status" data-order-status="18"><div><span tabindex="0" class="order-status">Shipped</span></div></td>
+            </tr>
+    </tbody>
+</table>
+
