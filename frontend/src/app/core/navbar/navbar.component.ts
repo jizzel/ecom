@@ -1,5 +1,9 @@
 import { Component, OnInit,AfterViewInit} from '@angular/core';
+import { Router } from '@angular/router';
 import * as M from 'materialize-css';
+import { Role } from 'src/app/Models/role';
+import { AuthenticationService } from 'src/app/services/auth.service';
+//import { Role } from '../Models/role';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +11,10 @@ import * as M from 'materialize-css';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
-
-  constructor() { }
+  Role = Role;
+  accountName:string;
+  accountUserFirstName:string;
+  constructor( private authService: AuthenticationService, private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +33,19 @@ export class NavbarComponent implements OnInit, AfterViewInit {
      
     }
 
-    
+    signOut(){
+      this.authService.logout();
+      this.router.navigate(['/']);
+    }
+
+    get isAuthorized(){
+      //this is called several times dont know why
+      console.log(this.authService.currentUserValue.firstName);
+      this.accountUserFirstName=this.authService.currentUserValue.firstName;
+      return this.accountUserFirstName;
+    }
+
+    // get isAuthorized() {
+    //   return this.authService.isAuthorized();
+    // }
 }

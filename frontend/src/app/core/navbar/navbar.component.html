@@ -4,7 +4,7 @@
     <div class="nav-wrapper"> 
       <a href="#!" class="brand-logo">Logo</a>
       
-      <!--Mobile harmburger menu-->
+      <!--Mobile harmburger menu -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger">
         <i class="material-icons">menu</i></a>
       
@@ -50,13 +50,13 @@
 
             <!-- Dropdown Structure for the Admin account-->
             <ul id="dropdown3" class="dropdown-content">
-              <li><a href="#!" id="account-name">Jekwakyewa</a></li>
-              <li><a href="#!">My Account</a></li>
-              <li><a routerLink="my-orders">My Orders</a></li>
-              <li><a href="#!">Manage Orders</a></li>
-              <li><a href="#!">Manage Products</a></li>
+              <li *ngIf="isAuthorized"><a href="#!" id="account-name"> {{accountUserFirstName}}</a></li>
+              <li *appUser><a href="#!">My Account</a></li>
+              <li *appUser><a routerLink="my-orders">My Orders</a></li>
+              <li *appUserRole="[ Role.Admin]"><a href="#!">Manage Orders</a></li>
+              <li *appUserRole="[ Role.Admin]"><a href="#!">Manage Products</a></li>
               <li class="divider"></li>
-              <li><a href="#!">Sign Out</a></li>
+              <li *appUser><a href="#!" (click)="signOut()">Sign Out</a></li>
             </ul>
     </div>
   </nav>
