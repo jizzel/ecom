@@ -1,1 +1,61 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col m6" class="login-page">
+            <div class="loginForm">
+                <h1 id="login-heading">CUSTOMER LOGIN</h1>
+                <p [ngStyle]="{marginBottom:'0px'}">
+                    Not a member? 
+                    <a routerLink="/register" id="customer-register-link">
+                        Join Us</a>
+                </p>
+                <form  id="myLoginForm" class="col s12 card-panel white" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                   <div class="row">
+                      <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                          <label for="email">Email</label>
+                          <input 
+                          id="mail" 
+                          type="email" 
+                          class="validate" 
+                          formControlName="email"
+                          [ngClass]="{ 'is-invalid': submitted && f.email.errors }">  
+                           <!-- <span 
+                           *ngIf="submitted && !f.valid && email?.touched && f.email.errors "
+                           class="helper-text">Enter a valid email</span>                -->
+                           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                            <label for="password">Password</label>
+                            <input 
+                            id="password" 
+                            type="password"
+                             class="validate"
+                             formControlName="password"
+                             [ngClass]="{ 'is-invalid': submitted && f.password.errors }"> 
+                              <!-- <span 
+                              *ngIf="!loginForm.valid && password?.touched"
+                              class="helper-text" 
+                              >Enter a valid password</span>                   -->
+                              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                          </div>
+                      </div>
+                      <p id="passwordResetSection">
+                          <a routerLink="/reset-password" id="resetPassword">Forgot your password?</a>
+                      </p>
+                        <button class="btn waves-effect waves-light black" type="submit" name="action" id="loginButton"
+                        ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            {{buttonName}}
+                        </button> 
+                        <div *ngIf="error" class="alert alert-danger helper-text">{{error}}</div>
+                  </form>
+            </div>           
+        </div>
+    </div>    
+</div>
+
+<!-- <i class="material-icons right">send</i> -->

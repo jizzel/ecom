@@ -4,13 +4,13 @@
     <div class="nav-wrapper"> 
       <a href="#!" class="brand-logo">Logo</a>
       
-      <!--Mobile harmburger menu-->
+      <!--Mobile harmburger menu -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger">
         <i class="material-icons">menu</i></a>
       
         <ul class="hide-on-med-and-down">
           <!-- Dropdown Trigger -->
-          <li id="catalog-menu"><a class="dropdown-trigger" href="#" data-target="dropdown1">Catalog<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li id="catalog-menu"><a class="dropdown-trigger" href="#" data-target="dropdown1">Catalog</a></li>
         </ul>
       <ul class="right hide-on-med-and-down">
         <li>
@@ -22,33 +22,34 @@
                 </div>
             </form>
         </li>
-        <li><a href="#"><i class="material-icons">person_outline</i></a></li>
-        <li><a routerLink="/shopping-cart"><i class="material-icons">shopping_cart</i></a></li>
+        <li><a routerLink="/log-in" class="dropdown-trigger" data-target='dropdown3'><i class="material-icons">person_outline</i></a></li>
+        <li><a  routerLink="/shopping-cart" ><i class="material-icons">shopping_cart</i></a></li>
         <a class="notification-icon--fixed">
           <small class="notification-badge">1</small>
         </a>
       </ul>
 
-        <!-- Dropdown Structure -->
+        <!-- Dropdown Structure for the catalog -->
         <ul id="dropdown1" class="dropdown-content">
           <li><a href="#!">one</a></li>
           <li><a href="#!">two</a></li>
           <li class="divider"></li>
           <li><a href="#!">three</a></li>
         </ul>
+
+      
+
+            <!-- Dropdown Structure for the Admin account-->
+            <ul id="dropdown3" class="dropdown-content">
+              <li *ngIf="isAuthorized"><a href="#!" id="account-name"> {{accountUserFirstName}}</a></li>
+              <li *appUser><a href="#!">My Account</a></li>
+              <li *appUser><a routerLink="my-orders">My Orders</a></li>
+              <li *appUserRole="[ Role.Admin]"><a href="#!">Manage Orders</a></li>
+              <li *appUserRole="[ Role.Admin]"><a href="#!">Manage Products</a></li>
+              <li class="divider"></li>
+              <li *appUser><a href="#!" (click)="signOut()">Sign Out</a></li>
+            </ul>
     </div>
   </nav>
 </div>
 
-<!--Menu Mobile-->
-  <!-- <ul id="mobile-navbar" class="sidenav">
-    <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Catalog<i class="material-icons right">arrow_drop_down</i></a></li>
-  </ul> -->
-
- 
-
-
-  <!-- <li><a routerLink='/'>one</a></li>
-    <li><a routerLink='/admin'>two</a></li>
-    <li class="divider"></li>
-    <li><a routerLink='/admin/orders'>three</a></li> -->

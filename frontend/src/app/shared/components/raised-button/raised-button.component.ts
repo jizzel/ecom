@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RaisedButtonComponent implements OnInit {
 
   @Input() buttonName: string = '';
-
+  @Input() raisedButtonColor:string;
+  
   constructor() { }
 
   ngOnInit(): void {

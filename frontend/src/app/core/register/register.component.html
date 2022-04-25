@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="col m6" class="register-page">
+            <div class="registerForm">
+                <h1 id="register-heading">CREATE ACCOUNT</h1>
+                <p [ngStyle]="{marginBottom:'20px'}">
+                    <a routerLink="/log-in" id="back-to-login-link">
+                        Back to Customer Login</a>
+                </p>
+                <form  id="myRegisterForm" class="col s12 card-panel white" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                   <div class="row">
+                      <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                          <label for="name">First Name</label>
+                          <input 
+                          id="firstName" 
+                          type="text" 
+                          class="validate" 
+                          formControlName="firstName">  
+                           <span 
+                           *ngIf="!registerForm.valid && firstName?.touched"
+                           class="helper-text">Enter your first name</span>               
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                            <label for="name">Last Name</label>
+                            <input 
+                            id="lastName" 
+                            type="text" 
+                            class="validate" 
+                            formControlName="lastName">  
+                             <span 
+                             *ngIf="!registerForm.valid && lastName?.touched"
+                             class="helper-text">Enter a last name</span>               
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                            <label for="name">Email</label>
+                            <input 
+                            id="mail" 
+                            type="email" 
+                            class="validate" 
+                            formControlName="email">  
+                             <span 
+                             *ngIf="!registerForm.valid && email?.touched"
+                             class="helper-text">Enter a valid email</span>               
+                          </div>
+                      </div>
+                    <div class="row">
+                        <div class="input-field col s12" [ngStyle]="{marginLeft:'1px'}">
+                            <label for="password">Password</label>
+                            <input 
+                            id="password" 
+                            type="password"
+                             class="validate"
+                             formControlName="password"> 
+                              <span 
+                              *ngIf="!registerForm.valid && password?.touched"
+                              class="helper-text" 
+                              >Enter a valid phone number</span>                  
+                          </div>
+                      </div>
+                        <button class="btn waves-effect waves-light black" type="submit" name="action" id="registerButton">
+                            {{buttonName}}
+                        </button> 
+                  </form>
+            </div>           
+        </div>
+    </div>    
+</div>

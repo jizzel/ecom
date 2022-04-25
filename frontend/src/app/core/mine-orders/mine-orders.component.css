@@ -1,0 +1,57 @@
+#myOdersHeading{
+    font-weight:600;
+    font-size:35px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    margin: 50px 0 0;
+    height:63px;
+    text-align: center;
+}
+
+#order-products{
+    text-align: left;
+    display: flex;
+    width:50%;
+}
+
+
+#product-image{
+    margin-right: 5px;
+    position:relative;
+    display: inline-block;
+}
+
+
+#myThumbNail{
+    width:80px;
+    height:80px;
+}
+
+#product-info-detail #product-info-price #product-infor-size{
+    line-height: 1.5;
+}
+
+#product-info-price #product-infor-size{
+    /* line-height: 1.5; */
+    outline:0;
+}
+
+
+#myorders-order-number{
+    margin-left: 21px;
+    margin-right: 10px;
+}
+
+
+#my-order-time-and-number{
+    height: 28px;
+    text-align: left;
+    font-size:14px;
+    color: #767676;
+}
+
+table td{
+    padding: 8px;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
